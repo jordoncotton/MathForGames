@@ -127,6 +127,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrix2.cpp" />
+    <ClCompile Include="Matrix3.cpp" />
     <ClCompile Include="Vectors2.cpp" />
     <ClCompile Include="Vectors3.cpp" />
   </ItemGroup>
