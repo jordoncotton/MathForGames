@@ -1,15 +1,16 @@
 #pragma once
 #include "Vectors3.h"
 
-class matrix3
+class Matrix3
 {
 public:
-	matrix3();
-	matrix3(Vector3, Vector3, Vector3);
+	Matrix3();
+	Matrix3(Vector3, Vector3, Vector3);
 
-	void set(matrix3);
-	matrix3 operator*(const matrix3)const;
+	void set(Matrix3);
+	Matrix3 operator*(const Matrix3)const;
 	Vector3 operator*(const Vector3)const;
+	Vector3& operator[] (int);
 
 	void rotateX(float);
 	void rotateY(float);
@@ -17,7 +18,7 @@ public:
 
 private:
 
-	float matrix[3][3];
+	float Matrix[3][3];
 
 	Vector3 xcol;
 	Vector3 ycol;

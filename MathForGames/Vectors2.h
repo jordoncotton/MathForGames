@@ -12,7 +12,7 @@ public:
 
 	float GetX();
 	float GetY();
-	float magnitude();
+	float Magnitude();
 	float Distance(Vector2& other);
 	float DotProduct(Vector2& other);
 
