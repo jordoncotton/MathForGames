@@ -2,6 +2,7 @@
 
 class Vector2
 {
+private:
 	float xPos;
 	float yPos;
 
