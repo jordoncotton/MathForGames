@@ -56,7 +56,7 @@ bool Vector2::operator!=(Vector2 & rhs)
 	return false;
 }
 
-float Vector2::magnitude()
+float Vector2::Magnitude()
 {
 	return sqrtf(pow(xPos, 2) + pow(yPos, 2));
 }
@@ -64,7 +64,7 @@ float Vector2::magnitude()
 float Vector2::Distance(Vector2& other)
 {
 	Vector2 a = *this - other;
-	return a.magnitude();
+	return a.Magnitude();
 }
 
 float Vector2::DotProduct(Vector2& other)
@@ -74,5 +74,5 @@ float Vector2::DotProduct(Vector2& other)
 
 Vector2 Vector2::Normalize()
 {
-	return Vector2((xPos / magnitude()), (yPos / magnitude()));
+	return Vector2((xPos / Magnitude()), (yPos / Magnitude()));
 }
