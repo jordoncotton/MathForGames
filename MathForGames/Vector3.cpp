@@ -38,6 +38,24 @@ Vector3 Vector3::operator*(float & rhs)
 	return Vector3(xPos * rhs, yPos * rhs, zPos * rhs);
 }
 
+float & Vector3::operator[](int other)
+{
+	// TODO: insert return statement here
+	float zero = 0.0;
+
+	switch (other)
+	{
+		case 0:
+		return xPos;
+		case 1:
+		return yPos;
+		case 2:
+		return zPos;
+		default:
+		return zero;
+	}
+}
+
 Vector3 Vector3::CrossProduct(Vector3& rhs)
 {
 	float x = ((yPos * zPos) - (zPos * yPos));

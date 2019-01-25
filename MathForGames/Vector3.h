@@ -23,6 +23,7 @@ public:
 	Vector3 operator+(Vector3 &rhs);
 	Vector3 operator-(Vector3 &rhs);
 	Vector3 operator*(float &rhs);
+	float& operator[] (int other);
 
 	bool operator==(Vector3 &rhs);
 	bool operator!=(Vector3 &rhs);

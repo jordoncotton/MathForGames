@@ -9,7 +9,7 @@ public:
 
 	Matrix3 operator*(const Matrix3)const;
 	Vector3 operator*(const Vector3)const;
-	Vector3& operator[] (int);
+	Vector3& operator[] (int other);
 
 	void RotateZ(float);
 

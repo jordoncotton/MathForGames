@@ -26,6 +26,8 @@ public:
 	float Dot(Vector4 other);
 	float& operator[] (int index);
 
+	operator float* ();
+
 private:
 	float Xpos, Ypos, Zpos, Wpos;
 

@@ -1,7 +1,9 @@
 #include "Vector4.h"
+#include <math.h>
 
 Vector4::Vector4()
 {
+	Xpos, Ypos, Zpos, Wpos = 0.0f;
 }
 
 Vector4::Vector4(float x, float y, float z, float w)
@@ -60,7 +62,7 @@ Vector4 Vector4::operator*(float & rhs)
 
 bool Vector4::operator==(Vector4 & rhs)
 {
-	return Xpos == rhs.Xpos && Ypos == rhs.Ypos &&
+	return (Xpos == rhs.Xpos && Ypos == rhs.Ypos &&
 	Zpos == rhs.Zpos &&
 	Wpos == rhs.Wpos);
 }
@@ -79,6 +81,7 @@ float Vector4::Magnitude()
 	(Ypos * Ypos) +
 	(Zpos * Zpos) +
 	(Wpos * Wpos));
+	
 }
 
 Vector4 Vector4::Normalise()
@@ -130,4 +133,11 @@ float & Vector4::operator[](int arr)
 		default:
 		return zero;
 	}
+}
+
+Vector4::operator float*()
+{
+	float temp[4] = { Xpos, Ypos, Zpos, Wpos };
+
+	return &temp[0];
 }

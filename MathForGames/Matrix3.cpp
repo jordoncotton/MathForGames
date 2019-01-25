@@ -1,4 +1,5 @@
 #include "Matrix3.h"
+#include <cmath>
 
 Matrix3::Matrix3()
 {
@@ -52,16 +53,12 @@ Vector3 Matrix3::operator*(const Vector3 vector) const
 {
 	Vector3 outcome;
 
-	for (int c = 0; c < 3; c++)
-	{
-		outcome[c] = Matrix[0][c] * vector[c] +
-			Matrix[1][c] * vector[c] +
-			Matrix[2][c] * vector[c];
-	}
+
+		
 	return outcome;
 }
 
-Vector3 & Matrix3::operator[](int)
+Vector3 & Matrix3::operator[](int other)
 {
 	// TODO: insert return statement here
 	Vector3 vec3 = Vector3(Matrix[0][0],
