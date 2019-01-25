@@ -51,11 +51,11 @@ Matrix3 Matrix3::operator*(const Matrix3 other) const
 
 Vector3 Matrix3::operator*(const Vector3 vector) const
 {
-	Vector3 outcome;
+	Vector3 arr[9];
 
-
+	x_axis = (arr[0], arr[3], arr[6]);
 		
-	return outcome;
+	return arr[9];
 }
 
 Vector3 & Matrix3::operator[](int other)
