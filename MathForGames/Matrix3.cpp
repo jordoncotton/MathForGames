@@ -48,22 +48,22 @@ Matrix3 Matrix3::operator*(const Matrix3 other) const
 	return outcome;
 }
 
-Vector3 Matrix3::operator*(const Vector3 vector) const
-{
-	Matrix3 outcome;
-
-	for (int c = 0; c < 3; c++)
-	{
-		for (int r = 0; r < 3; r++)
-		{
-			outcome.Matrix[r][c] =
-				Matrix[0][c] * vector.Matrix[r][0] +
-				Matrix[1][c] * vector.Matrix[r][1] +
-				Matrix[2][c] * vector.Matrix[r][2];
-		}
-	}
-	return outcome;
-}
+////Vector3 Matrix3::operator*(const Vector3 vector) const
+//{
+//	/*Matrix3 outcome;*/
+//
+//	/*for (int c = 0; c < 3; c++)*/
+//	{
+//		/*for (int r = 0; r < 3; r++)*/
+//		{
+//			/*outcome.Matrix[r][c] =
+//				Matrix[0][c] * vector.Matrix[r][0] +
+//				Matrix[1][c] * vector.Matrix[r][1] +
+//				Matrix[2][c] * vector.Matrix[r][2];*/
+//		}
+//	}
+//	/*return outcome;*/
+//}
 
 Vector3 & Matrix3::operator[](int other)
 {
