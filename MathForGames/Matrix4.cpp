@@ -15,16 +15,21 @@ Matrix4::Matrix4()
 Matrix4::Matrix4(Vector4 Xvec, Vector4 Yvec, Vector4 Zvec, Vector4 Wvec)
 {
 	for (int i = 0; i < 4; i++)
+	{
 		Matrix[i][0] = Xvec[i];
-
+	}
 	for (int i = 0; i < 4; i++)
+	{
 		Matrix[i][1] = Yvec[i];
-
+	}
 	for (int i = 0; i < 4; i++)
+	{
 		Matrix[i][2] = Zvec[i];
-
+	}
 	for (int i = 0; i < 4; i++)
+	{
 		Matrix[i][3] = Wvec[i];
+	}
 }
 
 Matrix4 Matrix4::operator*(Matrix4 something)
