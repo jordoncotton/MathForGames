@@ -16,4 +16,5 @@ public:
 private:
 
 	float Matrix[3][3];
+	float identityMatrixData[3][3];
 };
