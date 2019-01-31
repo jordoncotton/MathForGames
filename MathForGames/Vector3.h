@@ -14,16 +14,19 @@ public:
 
 	float GetX();
 	float GetY();
+	float GetZ();
 	float magnitude();
-	float Distance(Vector3& other);
-	float DotProduct(Vector3& other);
+	float Distance(Vector3 other);
+	float DotProduct(Vector3 other);
 
-	Vector3 CrossProduct(Vector3& rhs);
+	Vector3 CrossProduct(Vector3 rhs);
 	Vector3 Normalize();
 	Vector3 operator+(Vector3 &rhs);
 	Vector3 operator-(Vector3 &rhs);
-	Vector3 operator*(float &rhs);
+	Vector3 operator*(float rhs);
 	float& operator[] (int other);
+
+	operator float* ();
 
 	bool operator==(Vector3 &rhs);
 	bool operator!=(Vector3 &rhs);

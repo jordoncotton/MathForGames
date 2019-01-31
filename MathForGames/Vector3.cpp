@@ -15,12 +15,17 @@ Vector3::Vector3(float x, float y, float z)
 
 float Vector3::GetX()
 {
-	return 0.0f;
+	return xPos;
 }
 
 float Vector3::GetY()
 {
-	return 0.0f;
+	return yPos;
+}
+
+float Vector3::GetZ()
+{
+	return zPos;
 }
 
 Vector3 Vector3::operator+(Vector3 & rhs)
@@ -33,7 +38,7 @@ Vector3 Vector3::operator-(Vector3 & rhs)
 	return Vector3(xPos - rhs.xPos, yPos - rhs.yPos, zPos - rhs.zPos);
 }
 
-Vector3 Vector3::operator*(float & rhs)
+Vector3 Vector3::operator*(float  rhs)
 {
 	return Vector3(xPos * rhs, yPos * rhs, zPos * rhs);
 }
@@ -56,7 +61,14 @@ float & Vector3::operator[](int other)
 	}
 }
 
-Vector3 Vector3::CrossProduct(Vector3& rhs)
+Vector3::operator float*()
+{
+	float temp[3] = { xPos, yPos, zPos };
+
+	return &temp[0];
+}
+
+Vector3 Vector3::CrossProduct(Vector3 rhs)
 {
 	float x = ((yPos * zPos) - (zPos * yPos));
 	float y = ((zPos * xPos) - (xPos * zPos));
@@ -88,13 +100,13 @@ float Vector3::magnitude()
 	return sqrtf(pow(xPos, 2) + pow(yPos, 2) + pow(zPos, 2));
 }
 
-float Vector3::Distance(Vector3& other)
+float Vector3::Distance(Vector3 other)
 {
 	Vector3 a = *this - other;
 	return a.magnitude();
 }
 
-float Vector3::DotProduct(Vector3& other)
+float Vector3::DotProduct(Vector3 other)
 {
 	return ((xPos * other.xPos) + (yPos * other.yPos) + (zPos * other.zPos));
 }
