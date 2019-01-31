@@ -117,7 +117,7 @@ void Matrix3::RotateX(float Radi)
 
 void Matrix3::RotateY(float Radi)
 {
-	Matrix3 yRotationMatrix = Matrix3(cos(Radi), 0.0, -sin(Radi), 0.0, 1.0, 0.0, sin(0), 0.0, cos(Radi));
+	Matrix3 yRotationMatrix = Matrix3(cos(Radi), 0.0f, -sin(Radi), 0.0f, 1.0f, 0.0f, sin(0), 0.0f, cos(Radi));
 
 	for (int r = 0; r < 3; r++)
 	{

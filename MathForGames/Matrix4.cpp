@@ -108,32 +108,47 @@ void Matrix4::RotateY(float radi)
 	*this = (*this * y_rotation_matrix);
 }
 
-void Matrix4::RotateZ(float radi)
+void Matrix4::RotateZ(float Radi)
 {
-	auto rotationXcol = Vector4(cos(radi), sin(radi), 0.0, 0.0);
-	auto rotationYcol = Vector4(-sin(radi), cos(radi), 0.0, 0.0);
-	auto rotationZcol = Vector4(0.0, 0.0, 1.0, 0.0);
-	auto rotationWcol = Vector4(0.0, 0.0, 0.0, 1.0);
+	Matrix4 zRotationMatrix = Matrix4(cos(Radi), sin(Radi), 0.0f, 0.0f, -sin(Radi), cos(Radi), 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f);
 
-	Matrix4 zRotationMatrix = Matrix4(rotationXcol,
-		rotationYcol,
-		rotationZcol,
-		rotationWcol);
-
-	*this = (*this * zRotationMatrix);
+	for (int r = 0; r < 4; r++)
+	{
+		for (int c = 0; c < 4; c++)
+		{
+			Matrix[c][r] =
+				identityMatrixData[0][r] * zRotationMatrix.Matrix[c][0] +
+				identityMatrixData[1][r] * zRotationMatrix.Matrix[c][1] +
+				identityMatrixData[2][r] * zRotationMatrix.Matrix[c][2] +
+				identityMatrixData[3][r] * zRotationMatrix.Matrix[c][3];
+		}
+	}
 }
 
-Matrix4::Matrix4(float J, float K, float L, float M, float N, float O, float P, float Q, float R)
+Matrix4::operator float*()
+{
+	return Matrix[0];
+}
+
+Matrix4::Matrix4(float J, float K, float L, float M, float N, float O, float P, float Q, float R, float S, float T, float U, float V, float W, float X, float Y)
 {
 	Matrix[0][0] = J;
 	Matrix[1][0] = K;
 	Matrix[2][0] = L;
-
 	Matrix[0][1] = M;
+
 	Matrix[1][1] = N;
 	Matrix[2][1] = O;
-
 	Matrix[0][2] = P;
 	Matrix[1][2] = Q;
+
 	Matrix[2][2] = R;
+	Matrix[2][2] = S;
+	Matrix[2][2] = T;
+	Matrix[2][2] = U;
+
+	Matrix[2][2] = V;
+	Matrix[2][2] = W;
+	Matrix[2][2] = X;
+	Matrix[2][2] = Y;
 }
