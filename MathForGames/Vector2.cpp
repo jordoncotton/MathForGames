@@ -101,3 +101,8 @@ Vector2 Vector2::Normalize()
 {
 	return Vector2((xPos / Magnitude()), (yPos / Magnitude()));
 }
+
+Vector2 operator*(float lhs, Vector2 rhs)
+{
+	return rhs * lhs;
+}

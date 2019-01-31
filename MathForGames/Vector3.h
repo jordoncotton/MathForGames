@@ -31,3 +31,4 @@ public:
 	bool operator==(Vector3 &rhs);
 	bool operator!=(Vector3 &rhs);
 };
+Vector3 operator * (float, Vector3);

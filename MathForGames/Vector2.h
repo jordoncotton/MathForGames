@@ -29,3 +29,4 @@ public:
 	bool operator==(Vector2 &rhs);
 	bool operator!=(Vector2 &rhs);
 };
+Vector2 operator * (float, Vector2);

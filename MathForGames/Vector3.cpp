@@ -115,3 +115,8 @@ Vector3 Vector3::Normalize()
 {
 	return Vector3((xPos / magnitude()), (yPos / magnitude()), (zPos / magnitude()));
 }
+
+Vector3 operator*(float lhs, Vector3 rhs)
+{
+	return rhs * lhs;
+}

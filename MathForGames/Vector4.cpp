@@ -141,3 +141,8 @@ Vector4::operator float*()
 
 	return &temp[0];
 }
+
+Vector4 operator*(float lhs, Vector4 rhs)
+{
+	return rhs * lhs;;
+}

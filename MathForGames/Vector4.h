@@ -32,3 +32,4 @@ private:
 	float Xpos, Ypos, Zpos, Wpos;
 
 };
+Vector4 operator * (float, Vector4);
