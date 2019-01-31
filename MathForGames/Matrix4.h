@@ -16,6 +16,10 @@ public:
 	void RotateY(float);
 	void RotateZ(float);
 
+	Matrix4(float, float, float,
+		float, float, float,
+		float, float, float);
+
 private:
 	float Matrix[4][4];
 

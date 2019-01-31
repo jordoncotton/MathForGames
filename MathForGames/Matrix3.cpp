@@ -76,6 +76,21 @@ Vector3 & Matrix3::operator[](int)
 	return vector3;
 }
 
+Matrix3::Matrix3(float A, float B, float C, float D, float E, float F, float G, float H, float I)
+{
+	Matrix[0][0] = A;
+	Matrix[1][0] = B;
+	Matrix[2][0] = C;
+
+	Matrix[0][1] = D;
+	Matrix[1][1] = E;
+	Matrix[2][1] = F;
+
+	Matrix[0][2] = G;
+	Matrix[1][2] = H;
+	Matrix[2][2] = I;
+}
+
 Matrix3::operator float*()
 {
 	return Matrix[0];
@@ -83,7 +98,10 @@ Matrix3::operator float*()
 
 void Matrix3::RotateX(float Radi)
 {
-	Matrix3 xRotationMatrix = Matrix3(cos(Radi), sin(Radi), 0.0, -sin(Radi), cos(Radi), 0.0, 0.0, 0.0, 1.0);
+	Matrix3 xRotationMatrix = Matrix3(
+		cos(Radi), sin(Radi), 0.0f
+		, -sin(Radi), cos(Radi), 0.0f, 
+		0.0f, 0.0f, 1.0f);
 
 	for (int r = 0; r < 3; r++)
 	{

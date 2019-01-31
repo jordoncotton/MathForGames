@@ -122,3 +122,18 @@ void Matrix4::RotateZ(float radi)
 
 	*this = (*this * zRotationMatrix);
 }
+
+Matrix4::Matrix4(float J, float K, float L, float M, float N, float O, float P, float Q, float R)
+{
+	Matrix[0][0] = J;
+	Matrix[1][0] = K;
+	Matrix[2][0] = L;
+
+	Matrix[0][1] = M;
+	Matrix[1][1] = N;
+	Matrix[2][1] = O;
+
+	Matrix[0][2] = P;
+	Matrix[1][2] = Q;
+	Matrix[2][2] = R;
+}

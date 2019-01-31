@@ -11,6 +11,10 @@ public:
 	Vector3 operator*(Vector3);
 	Vector3& operator[] (int other);
 
+	Matrix3(float, float, float, 
+		float, float, float,
+		float, float, float);
+
 	operator float*();
 
 	void RotateX(float);
