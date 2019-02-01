@@ -12,7 +12,7 @@ public:
 
 	Vector4 operator + (Vector4& rhs);
 	Vector4 operator - (Vector4& rhs);
-	Vector4 operator * (float& rhs);
+	Vector4 operator * (float rhs);
 
 	bool operator == (Vector4& rhs);
 	bool operator != (Vector4& rhs);

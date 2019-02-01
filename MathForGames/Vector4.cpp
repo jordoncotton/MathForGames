@@ -50,7 +50,7 @@ Vector4 Vector4::operator-(Vector4 & rhs)
 	Wpos - rhs.Wpos);
 }
 
-Vector4 Vector4::operator*(float & rhs)
+Vector4 Vector4::operator*(float rhs)
 {
 	Xpos *= rhs;
 	Ypos *= rhs;
@@ -144,5 +144,5 @@ Vector4::operator float*()
 
 Vector4 operator*(float lhs, Vector4 rhs)
 {
-	return rhs * lhs;;
+	return rhs * lhs;
 }
